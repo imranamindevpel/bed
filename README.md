@@ -64,3 +64,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## env Credentials
+MAX_BEDS_LIMIT=100
+
+MESS_DAILY_PRICE=10
+MESS_WEEKLY_PRICE=70
+MESS_MONTHLY_PRICE=100
+
+TOP_BED_DAILY_PRICE=10
+TOP_BED_WEEKLY_PRICE=60
+TOP_BED_MONTHLY_PRICE=200
+
+MIDDLE_BED_DAILY_PRICE=15
+MIDDLE_BED_WEEKLY_PRICE=90
+MIDDLE_BED_MONTHLY_PRICE=300
+
+BOTTOM_BED_DAILY_PRICE=20
+BOTTOM_BED_WEEKLY_PRICE=120
+BOTTOM_BED_MONTHLY_PRICE=400
