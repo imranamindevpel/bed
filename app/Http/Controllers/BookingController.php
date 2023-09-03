@@ -38,27 +38,32 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         dd($request->all());
-        request()->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'quantity' => 'required',
-            'detail' => 'required',
-        ]);
+        // request()->validate([
+        //     'name' => 'required',
+        //     'price' => 'required',
+        //     'quantity' => 'required',
+        //     'detail' => 'required',
+        // ]);
         $data = [
-            'tenant_id' => $request->input('tenant_id'), // Assuming 'tenant_id' is provided in the request
-            'agent_id' => $request->input('agent_id'), // Assuming 'agent_id' is provided in the request
+            'user_id' => $request->input('user_id'),
             'price' => $request->input('price'),
-            'status' => $request->input('status'), // Should be one of: 'advance_booking', 'active', 'deactivate'
-            'type' => $request->input('type'), // Should be one of: 'paid', 'partial_paid'
-            'check_in_date' => $request->input('check_in_date'), // Assuming 'check_in_date' is provided in the request
-            'check_out_date' => $request->input('check_out_date'), // Assuming 'check_out_date' is provided in the request
-            'bed_id' => $request->input('bed_id'), // Assuming 'bed_id' is provided in the request
-            'booking_type' => $request->input('booking_type'), // Should be one of: 'custom_days', 'daily', 'weekly', 'monthly'
+            'status' => $request->input('status'),
+            'type' => $request->input('type'),
+            'booking_date' => $request->input('booking_date'),
+            'bed_id' => $request->input('bed_id'),
+            'booking_type' => $request->input('booking_type'),
             'rent' => $request->input('rent'),
-            'mess' => $request->input('mess'), // Assuming 'mess' is provided in the request
+            'mess_status' => $request->input('mess_status'),
+            'mess' => $request->input('mess'),
             'discount' => $request->input('discount'),
             'total' => $request->input('total'),
+            'paid' => $request->input('paid'),
+            'balance' => $request->input('balance'),
             'detail' => $request->input('detail'),
+            'due' => $request->input('due'),
+            'next_due_date' => $request->input('next_due_date'),
+            'check_in_date' => $request->input('check_in_date'),
+            'check_out_date' => $request->input('check_out_date'),
         ];        
         if($request->input('id')){
             Booking::where('id', $request->input('id'))->update($data);

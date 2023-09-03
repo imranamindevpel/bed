@@ -319,8 +319,6 @@ function save(event) {
     // Create a new FormData object to include the image file
     var formData = new FormData($('#form1')[0]);
     formData.append('id', id);
-    formData.append('name', name);
-    formData.append('phone', phone);
     formData.append('booking_date', booking_date);
     formData.append('check_in_date', check_in_date);
     formData.append('bed', bed);
@@ -387,7 +385,6 @@ function edit(id) {
         url: '/bookings/' + id,
         success: function(data) {
             document.getElementById('id').value = data.id;
-            document.getElementById('name').value = data.name;
             document.getElementById('price').value = data.price;
             document.getElementById('quantity').value = data.quantity;
             document.getElementById('detail').value = data.detail;
