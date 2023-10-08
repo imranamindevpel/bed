@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tenant_id'); // Assuming tenant_id is an integer
-            $table->unsignedBigInteger('agent_id'); // Assuming agent_id is an integer
+            $table->unsignedBigInteger('user_id'); // Assuming tenant_id is an integer
             $table->decimal('price', 10, 2); // Assuming price is a decimal with 10 total digits and 2 decimal places
             $table->enum('status', ['advance_booking', 'active', 'deactivate']); // Use an enum for limited options
             $table->enum('type', ['paid', 'partial_paid']); // Use an enum for limited options
