@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // Auto-incrementing integer (Primary Key)
             $table->string('name'); // String
-            $table->string('phone'); // Provide an empty string as the default value
+            $table->string('phone')->default(0); // Provide an empty string as the default value
             $table->string('email')->unique(); // String (Unique)
             $table->timestamp('email_verified_at')->nullable();// Timestamp (Nullable)
             $table->string('password'); // String (Assuming it will be hashed)
-            $table->string('address'); // String
+            $table->string('address')->default(0); // String
             $table->date('date_of_birth')->nullable(); // Date
-            $table->string('cnic'); // String
-            $table->string('role'); // String
+            $table->string('cnic')->default(0); // String
+            $table->string('role')->default(0); // String
             $table->decimal('percentage')->default(0); // Decimal (5 digits in total, 2 decimal places)
-            $table->string('status'); // Enum (Choose appropriate status values)
+            $table->string('status')->default(0); // Enum (Choose appropriate status values)
             $table->rememberToken(); // String
             $table->timestamps(); // Created at and Updated at timestamps
         });        
